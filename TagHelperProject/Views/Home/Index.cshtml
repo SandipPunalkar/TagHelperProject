@@ -1,5 +1,15 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Tag helper simple Example";
 }
 
-<spaeaker-card></spaeaker-card>
+@{
+    List<Speaker> speaker = new List<Speaker>
+{
+        new Speaker{SpeakerId=1124,UserFirstName="Douglas",UserLastName="Crockford",Company="PayPal",TrackName="Javascript"},
+        new Speaker{SpeakerId=1125,UserFirstName="Sam",UserLastName="ford",Company="Facebook",TrackName="React"},
+        new Speaker{SpeakerId=1126,UserFirstName="Mary",UserLastName="Willam",Company="Microsoft",TrackName="C#"},
+    };
+}
+<spaeaker-card speaker="@speaker[0]"></spaeaker-card>
+

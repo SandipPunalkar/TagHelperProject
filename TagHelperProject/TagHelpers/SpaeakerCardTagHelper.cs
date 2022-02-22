@@ -4,16 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using TagHelperProject.Models;
 
 namespace TagHelperProject.TagHelpers
 {
     //[HtmlTargetElement("tag-name")]
     public class SpaeakerCardTagHelper:TagHelper
     {
+        public Speaker Speaker { get; set; }
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "strong";
-            output.Content.SetHtmlContent($"Date: { DateTime.Now}");
+            string content =$@"<div>
+                    <div><img class='img-fluid' src='images/{Speaker.SpeakerId}.jpg' alt='Douglas'/></ div >
+                      <h4><a href='#'>{ Speaker.UserFirstName} {Speaker.UserLastName}</a></h4>
+                    <p>{Speaker.Company}</p>
+                    <p>Keynote: Will be announced soon</p>
+                    <ul>
+                        <li>
+                            <a href='#' target='_blank'>LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href='#' target='_blank'>Microsoft</a>
+                        </li>
+                    </ul>
+                    </div>";
+
+            output.Attributes.SetAttribute("class", "col-12 col-sm-6 col-md-4 col-lg-3");
+            output.TagName = "div";
+            output.Content.SetHtmlContent(content);
         }
     }
 }
