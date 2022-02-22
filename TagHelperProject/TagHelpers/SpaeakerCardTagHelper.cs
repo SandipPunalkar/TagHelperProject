@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using TagHelperProject.Models;
 
 namespace TagHelperProject.TagHelpers
 {
-    //[HtmlTargetElement("tag-name")]
+    [HtmlTargetElement(ParentTag = "speaker-track")]
     public class SpaeakerCardTagHelper:TagHelper
     {
         public Speaker Speaker { get; set; }
@@ -30,7 +25,7 @@ namespace TagHelperProject.TagHelpers
                     </ul>
                     </div>";
 
-            output.Attributes.SetAttribute("class", "col-12 col-sm-6 col-md-4 col-lg-3");
+            output.Attributes.SetAttribute("class", "col-xl-12 col-sm-6 col-md-4 col-lg-3");
             output.TagName = "div";
             output.Content.SetHtmlContent(content);
         }

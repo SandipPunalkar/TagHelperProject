@@ -8,8 +8,14 @@
 {
         new Speaker{SpeakerId=1124,UserFirstName="Douglas",UserLastName="Crockford",Company="PayPal",TrackName="Javascript"},
         new Speaker{SpeakerId=1125,UserFirstName="Sam",UserLastName="ford",Company="Facebook",TrackName="React"},
-        new Speaker{SpeakerId=1126,UserFirstName="Mary",UserLastName="Willam",Company="Microsoft",TrackName="C#"},
+        new Speaker{SpeakerId=1126,UserFirstName="Mary",UserLastName="Willam",Company="Microsoft",TrackName="Javascript"},
     };
 }
-<spaeaker-card speaker="@speaker[0]"></spaeaker-card>
 
+<div class="container">
+    <speaker-track track-name="Javascript">
+        <vc:spaeaker-card speaker="@speaker[0]"></vc:spaeaker-card>
+        <vc:spaeaker-card speaker="@speaker[1]"></vc:spaeaker-card>
+        <vc:spaeaker-card speaker="@speaker[2]"></vc:spaeaker-card>
+    </speaker-track>
+</div>
