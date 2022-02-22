@@ -3,19 +3,14 @@
     ViewData["Title"] = "Tag helper simple Example";
 }
 
-@{
-    List<Speaker> speaker = new List<Speaker>
-{
-        new Speaker{SpeakerId=1124,UserFirstName="Douglas",UserLastName="Crockford",Company="PayPal",TrackName="Javascript"},
-        new Speaker{SpeakerId=1125,UserFirstName="Sam",UserLastName="ford",Company="Facebook",TrackName="React"},
-        new Speaker{SpeakerId=1126,UserFirstName="Mary",UserLastName="Willam",Company="Microsoft",TrackName="Javascript"},
-    };
-}
+<company name="Microsoft">
+    <employee name="Taylor Mullen" title="Software Engineer IT"></employee>
+    <employee name="Damian Edward" title="Principal Program Mangaer"></employee>
+    <employee name="Eilon Lipton" title="Principal Group Mangaer"></employee>
+</company>
 
-<div class="container">
-    <speaker-track track-name="Javascript">
-        <vc:spaeaker-card speaker="@speaker[0]"></vc:spaeaker-card>
-        <vc:spaeaker-card speaker="@speaker[1]"></vc:spaeaker-card>
-        <vc:spaeaker-card speaker="@speaker[2]"></vc:spaeaker-card>
-    </speaker-track>
-</div>
+<company name="Google">
+    <employee name="Larry Page" title="Engineer Inventor"></employee>
+    <employee name="Sergey Brin" title="Computer Scientist"></employee>
+</company>
+
